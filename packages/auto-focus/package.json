@@ -1,6 +1,6 @@
 {
   "name": "@vinsea/tampermonkey-autofocus",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "auto focus on first input element",
   "author": "Vinsea",
   "repository": {

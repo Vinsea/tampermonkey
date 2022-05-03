@@ -2,7 +2,7 @@
 // @name             自动聚焦第一个输入框，可自定义快捷键
 // @name:en          auto focus on first <input>
 // @namespace        @Vinsea
-// @version          0.2.1
+// @version          1.0.0
 // @description      进页面聚焦到第一个搜索框中，默认使用ctrl+q可手动触发，可自定义快捷键
 // @description:en   auto foucs on first input box
 // @author           Vinsea
