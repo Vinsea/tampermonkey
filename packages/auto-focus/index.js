@@ -1,17 +1,19 @@
-import Dialog from './lib/Dialog';
+import Settings from './lib/Settings';
 import initStyle from './lib/styles';
+import { initConfig, config } from './lib/util';
 
 /**
  * focus
  * @returns {undefined}
  */
 function doFocus() {
+    const preventScroll = config.get().preventScroll === '0';
     const firstInput = document.querySelector('input:not([type=hidden])');
 
     if (firstInput) {
         const val = firstInput.value;
         firstInput.value = '';
-        firstInput.focus();
+        firstInput.focus({ preventScroll });
         firstInput.value = val;
     }
 }
@@ -22,12 +24,14 @@ function doFocus() {
  */
 function initEvents() {
     GM.registerMenuCommand('设置', () => {
-        const dialog = new Dialog({ content: '是否自动滚动到聚焦处，默认:true' });
-        dialog.open();
+        const settings = new Settings();
+        settings.open();
     });
 
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'q' && e.ctrlKey) {
+        const [key1, key2, key3] = config.get().shortcut;
+        const hasKey2 = key2 ? e[`${key2}Key`] : true;
+        if (e[`${key1}Key`] && hasKey2 && e.key.toLowerCase() === key3) {
             doFocus();
         }
     });
@@ -39,6 +43,7 @@ function initEvents() {
  */
 function load() {
     doFocus();
+    initConfig();
     initStyle();
     initEvents();
 }

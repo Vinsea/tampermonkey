@@ -9,7 +9,7 @@ class Dialog {
             content: '',
             okText: '确认',
             cancelText: '取消',
-            onOK: () => ({}),
+            onOk: () => ({}),
             onCancel: () => ({})
         }, opt);
 
@@ -29,12 +29,18 @@ class Dialog {
         header.textContent = this.option.header;
         container.appendChild(header);
 
-        const body = document.createElement('div');
-        body.classList.add(claz('vv-dialog-body'));
-        container.appendChild(body);
+        this.body = document.createElement('div');
+        this.body.classList.add(claz('vv-dialog-body'));
+        container.appendChild(this.body);
 
-        const text = document.createTextNode(this.option.content);
-        body.appendChild(text);
+        if (this.option.content) {
+            const text = document.createTextNode(this.option.content);
+            this.body.appendChild(text);
+        }
+
+        this.tip = document.createElement('div');
+        this.tip.classList.add(claz('vv-dialog-tip'));
+        container.appendChild(this.tip);
 
         const footer = document.createElement('div');
         footer.classList.add(claz('vv-dialog-footer'));
@@ -49,8 +55,17 @@ class Dialog {
         footer.appendChild(cancel);
         const ok = document.createElement('button');
         ok.textContent = this.option.okText;
-        ok.addEventListener('click', this.option.onOK);
+        ok.addEventListener('click', this.option.onOk);
         footer.appendChild(ok);
+    }
+
+    showTip(text) {
+        this.tip.style.display = 'block';
+        this.tip.textContent = text;
+    }
+
+    hideTip() {
+        this.tip.style.display = 'none';
     }
 
     open() {
@@ -61,6 +76,7 @@ class Dialog {
     close() {
         document.body.style.overflow = bodyOverflow;
         document.body.removeChild(this.wrapper);
+        this.body = null;
         this.wrapper = null;
     }
 }

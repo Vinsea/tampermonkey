@@ -6,7 +6,7 @@ import { addStyle, claz } from './util';
  */
 export default function () {
     addStyle(`
-.${claz('vv-dialog-wrapper')}{
+.${claz('vv-dialog-wrapper')} {
     position: fixed;
     top: 0;
     right: 0;
@@ -18,9 +18,8 @@ export default function () {
 .${claz('vv-dialog')} {
     width: 500px;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 20px;
+    top: 100px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
@@ -34,13 +33,19 @@ export default function () {
     font-weight: bold;
     border-bottom: 1px solid #e9e9e9;
 }
-.${claz('vv-dialog-header')},
 .${claz('vv-dialog-body')} {
     padding: 24px;
-}
-.${claz('vv-dialog-body')} {
     font-size: 14px;
     color: #333;
+}
+.${claz('vv-dialog-body')} form select{
+    margin-right: 10px;
+}
+.${claz('vv-dialog-tip')} {
+    font-size: 14px;
+    color: #f73131;
+    line-height: 20px;
+    padding: 0 0 10px 24px;
 }
 .${claz('vv-dialog-footer')} {
     border-top: 1px solid #e9e9e9;
@@ -67,5 +72,8 @@ export default function () {
     border-color: #fff;
     background-color: #fff;
 }
-    `);
+.${claz('vv-setting-title')} {
+    margin: 10px 0 5px;
+}
+`);
 }
