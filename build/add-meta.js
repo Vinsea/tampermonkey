@@ -11,7 +11,7 @@ const resolvePath = (dir) => path.join(__dirname, dir);
         if (!meta) {
             continue;
         }
-        const distPath = resolvePath(`../dist/${file}.js`);
+        const distPath = resolvePath(`../dist/${file}.user.js`);
         const dist = await readFile(distPath, 'utf8');
         const codeResult = dist.split('\n').map(v => (/^ {2,}/).test(v) ? `  ${v}` : v)
             .join('\n');

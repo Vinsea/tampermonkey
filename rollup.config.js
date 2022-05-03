@@ -8,7 +8,7 @@ export default {
     input: 'packages/auto-focus/index.js',
     output: {
         dir: 'dist',
-        entryFileNames: 'auto-focus.js',
+        entryFileNames: 'auto-focus.user.js',
         format: 'iife'
     },
     plugins: [
