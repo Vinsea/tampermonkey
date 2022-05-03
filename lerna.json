@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "**/__tests__/**",
+    "**/*.md"
+  ],
+  "command": {
+    "publish": {
+      "allowBranch": "main",
+      "message": "chore: publish %v",
+      "registry": "https://registry.npmjs.org/"
+    },
+    "version": {
+      "allowBranch": "main",
+      "message": "chore: :tada: bump version %v"
+    }
+  }
+}

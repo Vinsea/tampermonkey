@@ -1,0 +1,16 @@
+// ==UserScript==
+// @name             auto focus on first <input>
+// @name:zh          自动聚焦第一个输入框
+// @namespace        @Vinsea
+// @version          0.2.1
+// @description      auto foucs on first input box
+// @description:zh   默认聚焦到第一个搜索框中
+// @author           Vinsea
+// @match            *
+// @match            http*://*/*
+// @run-at           document-idle
+// @grant            GM.registerMenuCommand
+// @grant            GM.setValue
+// @grant            GM.listValues
+// @license          MIT
+// ==/UserScript==

@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "vinsea-tampermonkey-monorepo",
+  "description": "my tampermonkey plugins",
+  "author": "Vinsea",
+  "scripts": {
+    "packages:bootstrap": "lerna bootstrap --hoist",
+    "packages:changed": "lerna changed",
+    "packages:list": "lerna ls --long --all",
+    "packages:publish": "lerna publish",
+    "packages:publish-log": "lerna publish patch --conventional-commits",
+    "build": "rollup -c && node build/add-meta.js",
+    "lint": "eslint packages --fix",
+    "test": "lerna run test",
+    "clean": "lerna clean && rm -rf node_modules",
+    "precommit": "npm run lint"
+  },
+  "keywords": [
+    "vinsea",
+    "tampermonkey",
+    "greasemonkey"
+  ],
+  "devDependencies": {
+    "@babel/core": "7.17.10",
+    "@babel/preset-env": "7.17.10",
+    "@rollup/plugin-babel": "5.3.1",
+    "@rollup/plugin-multi-entry": "4.1.0",
+    "@vinsea/eslint-config-rules": "^1.0.2",
+    "eslint": "8.14.0",
+    "globby": "11.1.0",
+    "lerna": "^4.0.0",
+    "rollup": "2.71.1",
+    "rollup-plugin-sizes": "1.0.4"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@vinsea/tampermonkey-autofocus",
+  "version": "1.0.1",
+  "description": "auto focus on first input element",
+  "author": "Vinsea",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinsea/tampermonkey.git",
+    "directory": "packages/auto-focus"
+  },
+  "bugs": {
+    "url": "https://github.com/Vinsea/tampermonkey/issues"
+  },
+  "homepage": "https://github.com/Vinsea/tampermonkey/blob/main/packages/auto-focus/README.md",
+  "keywords": [
+    "tampermonkey",
+    "angular",
+    "preset"
+  ],
+  "files": [
+    "auto-focus"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "node rollup.build.js",
+    "test": "mocha --timeout 30000"
+  }
+}
