@@ -10,12 +10,14 @@ automaticly focus on first input box, manually trigger with shortcut keys `ctrl 
 
 ## 设置 settings
 1. 默认会自动滚动到聚焦处
-1. the browser will scroll the element into view after focusing it,if this is set to false/`否`, no scrolling will occur.
-![1](./readme-assets/1.png)
+    the browser will scroll the element into view after focusing it,if this is set to false/`否`, no scrolling will occur.
+
+![1](https://raw.githubusercontent.com/Vinsea/tampermonkey/main/packages/auto-focus/readme-assets/1.png)
 
 2. 设置快捷键
-2. Set shortcut keys
-![2](./readme-assets/2.png)
+    Set shortcut keys
+
+![2](https://raw.githubusercontent.com/Vinsea/tampermonkey/main/packages/auto-focus/readme-assets/2.png)
 
 ## 其他 others
 
